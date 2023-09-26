@@ -3,6 +3,7 @@
 
 ## main.cpp - Complete
 
+---
 #### int main(int argc, char *argv[]);
 
 **parameters**
@@ -20,6 +21,7 @@
 - singleton class!
 - base code for final program
 
+---
 #### explicit Application();
 
 **parameters**
@@ -28,6 +30,7 @@
 **description**
 : **private** class constructor that initial just new for mPluginManager
 
+---
 #### static Application *instance();
 
 **parameters**
@@ -36,6 +39,7 @@
 **description**
 : create a static instance from class and returns its address
 
+---
 #### static void performStartupConfiguration();
 
 **parameters**
@@ -44,6 +48,7 @@
 **description**
 : do some important configurations: set platform theme for ui, initialSurfaceFormat()
 
+---
 #### void initialize();
 
 **parameters**
@@ -52,6 +57,7 @@
 **description**
 : prepare MainWindow and ListWindow, initializeQmlEngine(), initializeDefenseDataManager(), prepare mQmlEngine for program
 
+---
 #### void show();
 
 **parameters**
@@ -60,6 +66,7 @@
 **description**
 : show mMainWindow
 
+---
 #### inline MainWindow *mainWindow() const;
 
 **parameters**
@@ -68,6 +75,7 @@
 **description**
 : getter for mMainWindow
 
+---
 #### inline QQmlApplicationEngine *qmlEngine() const;
 
 **parameters**
@@ -76,6 +84,7 @@
 **description**
 : getter for mQmlEngine
 
+---
 #### inline DefenseDataManager *defenseDataManager() const;
 
 **parameters**
@@ -84,6 +93,7 @@
 **description**
 : getter for mDefenseDataManager
 
+---
 #### ServiceManager *serviceManager() const;
 
 **parameters**
@@ -92,6 +102,7 @@
 **description**
 : getter for mServiceManager
 
+---
 #### static void initialSurfaceFormat();
 
 **parameters**
@@ -100,6 +111,7 @@
 **description**
 : creating and setting as default a surface format for QSurfaceFormat class.
 
+---
 #### void initializeQmlEngine();
 
 **parameters**
@@ -108,6 +120,7 @@
 **description**
 : initializing mQmlEngine
 
+---
 #### void initializeDefenseDataManager();
 
 **parameters**
@@ -116,6 +129,7 @@
 **description**
 : initialize mDefenseDataManager
 
+---
 #### void onQmlObjectCreated(QObject *obj, const QUrl &objUrl);
 
 **parameters**
@@ -126,6 +140,7 @@
 **description**
 : set mMainWindow and mListWindow when created (?)
 
+---
 #### void onUICreated();
 
 **parameters**
@@ -138,6 +153,7 @@
 
 ### MainWindow
 
+---
 #### MainWindow(QWindow *parent = nullptr);
 
 **parameters**
@@ -148,6 +164,7 @@
 : class constructor, initializing mToolbox, registering
 MapControllerItem, SmallMap for qml
 
+---
 #### void initComponent();
 
 **parameters**
@@ -156,6 +173,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : initializing mMapItem, mLayersModel, mLocationManagerProxyModel
 
+---
 #### QQmlEngine *getQmlEngine();
 
 **parameters**
@@ -164,6 +182,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : getter for qml engine
 
+---
 #### LayersModel *layersModel() const;
 
 **parameters**
@@ -172,6 +191,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : getter for mLayersModel
 
+---
 #### ToolboxProxyModel *toolbox() const;
 
 **parameters**
@@ -180,6 +200,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : getter for mToolbox
 
+---
 #### LocationManagerProxyModel *locationManagerProxyModel() const;
 
 **parameters**
@@ -188,6 +209,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : getter for mLocationManagerProxyModel
 
+---
 #### MapItem* getMapItem();
 
 **parameters**
@@ -196,6 +218,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : getter for mMapItem
 
+---
 #### void addToLeftContainer(QQuickItem *item, QString title);
 
 **parameters**
@@ -206,6 +229,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : call a qml function that add item to left sidebar
 
+---
 #### void addToRightContainer(QQuickItem *item, QString title);
 
 **parameters**
@@ -216,6 +240,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : call a qml function that add item to right sidebar
 
+---
 #### void addToCenterCenterContainer(QQuickItem *item);
 
 **parameters**
@@ -225,6 +250,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : call a qml function that add item to main window
 
+---
 #### void removeFromLeftContainer(QQuickItem *item);
 
 **parameters**
@@ -234,6 +260,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : call a qml function that remove item from left sidebar
 
+---
 #### void removeFromRightContainer(QQuickItem *item);
 
 **parameters**
@@ -243,6 +270,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : call a qml function that remove item from right sidebar
 
+---
 #### void showListWindow();
 
 **parameters**
@@ -251,6 +279,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : toggle the mListWindow between show & hide
 
+---
 #### void setListWindow(ListWindow *listWindow);
 
 **parameters**
@@ -260,6 +289,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : setter for mListWindow
 
+---
 #### bool event(QEvent *ev) override;
 
 **parameters**
@@ -269,6 +299,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : (?)
 
+---
 #### void showInfoItem(QQuickItem* item, QString title);
 
 **parameters**
@@ -279,6 +310,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : (?)
 
+---
 #### void hideInfoItem(QQuickItem* item);
 
 **parameters**
@@ -288,6 +320,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : (?)
 
+---
 #### void hideProperty(QQuickItem* item);
 
 **parameters**
@@ -297,6 +330,7 @@ MapControllerItem, SmallMap for qml
 **description**
 : (?)
 
+---
 #### void addTabToListWindow(const QString tabTitle, QQuickItem *tabItem);
 
 **parameters**
